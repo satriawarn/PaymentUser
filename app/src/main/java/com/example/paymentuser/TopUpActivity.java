@@ -16,6 +16,9 @@ import com.example.helper.Utils;
 import com.example.presenter.TopUpPresenter;
 import com.example.response.TopUpResponse;
 import com.example.view.TopUpView;
+import com.gdacciaro.iOSDialog.iOSDialog;
+import com.gdacciaro.iOSDialog.iOSDialogBuilder;
+import com.gdacciaro.iOSDialog.iOSDialogClickListener;
 
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -54,8 +57,28 @@ public class TopUpActivity extends AppCompatActivity implements TopUpView {
     private void topUp(){
         isValid = validation();
         if (isValid){
-            progressBar.setVisibility(View.VISIBLE);
-            presenter.topUp(no_kartu,nominal);
+            new iOSDialogBuilder(TopUpActivity.this)
+                    .setTitle("Peringatan")
+                    .setSubtitle("Anda akan melakukan top up"+"\n"
+                            +"Sejumlah : Rp "+nominal+"\n")
+                    .setBoldPositiveLabel(true)
+                    .setCancelable(false)
+                    .setPositiveListener("Oke",new iOSDialogClickListener() {
+                        @Override
+                        public void onClick(iOSDialog dialog) {
+                            progressBar.setVisibility(View.VISIBLE);
+                            presenter.topUp(no_kartu,nominal);
+                            dialog.dismiss();
+                        }
+                    })
+                    .setNegativeListener("Tidak", new iOSDialogClickListener() {
+                        @Override
+                        public void onClick(iOSDialog dialog) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .build().show();
+
         }
 
     }
