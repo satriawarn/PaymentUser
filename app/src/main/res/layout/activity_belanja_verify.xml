@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BelanjaVerifyActivity"
+    android:background="#FFFF">
+
+    <Button
+        android:id="@+id/button11"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="313dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_green_rec"
+        android:onClick="BelanjaBackHome"
+        android:text="Kembali ke Home"
+        android:textColor="#FFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button10"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="313dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_blue_rec"
+        android:onClick="BelanjaConfirmation"
+        android:text="Verifikasi"
+        android:textColor="#FFFF"
+        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="300dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/rlight"
+        android:text="Apabila data salah, silahkan kembali ke home dan proses pembelian ulang."
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="14dp"
+        android:fontFamily="@font/rmedium"
+        android:text="Merchant\nRp xxxxxx"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView21"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="300dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="22dp"
+        android:fontFamily="@font/rlight"
+        android:text="Anda akan belanja ke merchant:"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="300dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/rlight"
+        android:text="Silahkan klik verikifasi jika anda ingin membayar."
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView22"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="188dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="420dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView21"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Payment User</string>
+    <string name="topup">Top Up</string>
+    <string name="topupconfirmation">Top Up Confirmation</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="belanja">Belanja</string>
+    <string name="belanjaverify">Verifikasi Belanja</string>
+    <string name="belanjaconfirmation">Belanja Confirmation</string>
+    <string name="ppob">PPOB</string>
+    <string name="transfer">Transfer</string>
+</resources>

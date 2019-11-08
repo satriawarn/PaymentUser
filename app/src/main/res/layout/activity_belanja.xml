@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BelanjaActivity"
+    android:background="#FFFF">
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="137dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/rmedium"
+        android:text="085xxxxxxxxx"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="300dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/rlight"
+        android:text="Proses pembayaran menggunakan nomor telepon. Silahkan sebutkan nomor berikut ke merchant."
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="300dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/rlight"
+        android:text="Berikut nomor telepon anda:"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button9"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="313dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="210dp"
+        android:background="@drawable/button_blue_rec"
+        android:onClick="BelanjaVerify"
+        android:text="Proses Pembayaran"
+        android:textColor="#FFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="188dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="420dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:layout_marginBottom="21dp"
+        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
