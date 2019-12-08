@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,7 @@ import com.example.response.BelanjaResponse;
 import com.example.response.VerifResponse;
 import com.example.view.BelanjaView;
 import com.example.view.VerifView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -27,7 +30,7 @@ public class BelanjaVerifyActivity extends AppCompatActivity implements VerifVie
     private ApiInterface apiInterface;
     private VerifPresenter presenter;
     private BelanjaPresenter presenter1;
-    private String no_kartu,merchant,total,idmerchant,user;
+    private String no_kartu,merchant,total,idmerchant,user,user_pin;
     private TextView namadannominal;
     private ProgressBar progressBar;
 
@@ -62,8 +65,7 @@ public class BelanjaVerifyActivity extends AppCompatActivity implements VerifVie
         presenter.getVerif(no_kartu);
     }
     private void bayar(){
-        progressBar.setVisibility(View.VISIBLE);
-        presenter1.inputBelanja(no_kartu,user);
+        bottomSheet();
     }
 
     @Override
@@ -108,6 +110,33 @@ public class BelanjaVerifyActivity extends AppCompatActivity implements VerifVie
         Intent intent = new Intent(BelanjaVerifyActivity.this, BelanjaActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void bottomSheet(){
+        View view = getLayoutInflater().inflate(R.layout.bottom_sheet_pin, null);
+
+        final BottomSheetDialog dialog = new BottomSheetDialog(BelanjaVerifyActivity.this);
+        dialog.setContentView(view);
+        dialog.show();
+        final EditText edtPin = view.findViewById(R.id.edtPin);
+
+        Button btnTest = view.findViewById(R.id.ok);
+        btnTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                user_pin = edtPin.getText().toString();
+                if (user_pin.isEmpty()){
+                    Toast.makeText(BelanjaVerifyActivity.this, "Silakan Masukkan PIN", Toast.LENGTH_SHORT).show();
+                    edtPin.requestFocus();
+                } else {
+                    progressBar.setVisibility(View.VISIBLE);
+                    presenter1.inputBelanja(no_kartu,user,user_pin);
+                    dialog.dismiss();
+                }
+
+            }
+        });
+
     }
     
 }
