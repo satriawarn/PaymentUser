@@ -22,8 +22,8 @@ public class BelanjaPresenter {
         this.apiInterface = apiInterface;
     }
 
-    public void inputBelanja(String no_kartu, String id_transaksi_user){
-        compositeDisposable.add(apiInterface.inputBelanja(no_kartu, id_transaksi_user)
+    public void inputBelanja(String no_kartu, String id_transaksi_user, String user_pin){
+        compositeDisposable.add(apiInterface.inputBelanja(no_kartu, id_transaksi_user,user_pin)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribeWith(new DisposableObserver<BelanjaResponse>() {

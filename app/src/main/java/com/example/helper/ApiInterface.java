@@ -36,7 +36,9 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("user/input_belanja")
-    Observable<BelanjaResponse> inputBelanja(@Field("no_kartu") String no_kartu, @Field("id_transaksi_user") String id_transaksi_user);
+    Observable<BelanjaResponse> inputBelanja(@Field("no_kartu") String no_kartu,
+                                             @Field("id_transaksi_user") String id_transaksi_user,
+                                             @Field("user_pin") String user_pin);
 
     @FormUrlEncoded
     @POST("cek_bayar_dengan_smartphone")
